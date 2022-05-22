@@ -1,6 +1,6 @@
 const {db: newdb, sequelize} = require('./new/connect')
 const olddb = require('./old/connect').db
-
+ 
 void async function db_converter(){
   await sequelize.sync({ force: true })
   const customer_old_db = await olddb.Customer.findAll()
